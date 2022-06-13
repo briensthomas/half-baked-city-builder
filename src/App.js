@@ -22,29 +22,33 @@ function App() {
 
   const [slogans, setSlogans] = useState(['The City that Sleeps']);
 
+
   return (
     <div className="App">
       {/* here, the City component takes in skylineId, waterfrontId, castleId as props. It'll use those ids to render pictures correctly. */}
-      <img src='' />
-      <img src='' />
-      <img src='' />
-
+      <City skylineId={skylineId}
+        waterfrontId={waterfrontId}
+        castleId={castleId} />
       <h1>
         {/* dynamically update the city name here using state */}
         Welcome to beautiful Portland!
       </h1>
       <div className='bottom'>
         {/* here, the CityNameInput component takes in the setCityName state handler function */}
+        <CityNameInput setCityName={setCityName} />
         <section className='dropdowns'>
           {/* 
           render all three Dropdown components (WaterfrontDropdown, SkylineDropdown, CastleDropdown) here. 
           
           In each Dropdown, pass as props the state handler functions defined above, so that these child components can manipulate parent state 
           */}
+          <SkylineDropdown setSkylineId={setSkylineId}
+            setWaterfrontId={setWaterfrontId}
+            setCastleId={setCastleId} />
         </section>
         {/* here, the SloganForm component takes in the setSlogans state handler function and the slogans array that live in state */}
         {/* here, the SloganList component takes the array of slogans that lives in state */}
-
+        <SloganForm setSlogans={setSlogans} />
       </div>
     </div>
   );
