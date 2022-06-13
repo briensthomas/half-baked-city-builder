@@ -14,9 +14,21 @@ function App() {
   // you'll need to track a city name, which starts as the city name of your choice.
   // finally, you'll need an array of slogans, which could start out as ['The City of Excellence'] for example
 
+  const [skylineId, setSkylineId] = useState(1);
+  const [waterfrontId, setWaterfrontId] = useState(1);
+  const [castleId, setCastleId] = useState(1);
+
+  const [cityName, setCityName] = useState('Napville');
+
+  const [slogans, setSlogans] = useState(['The City that Sleeps']);
+
   return (
     <div className="App">
       {/* here, the City component takes in skylineId, waterfrontId, castleId as props. It'll use those ids to render pictures correctly. */}
+      <img src='' />
+      <img src='' />
+      <img src='' />
+
       <h1>
         {/* dynamically update the city name here using state */}
         Welcome to beautiful Portland!
