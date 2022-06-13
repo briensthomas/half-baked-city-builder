@@ -13,6 +13,7 @@ export default function SloganForm({ slogans, setSlogans }) {
     // On submit call the setSlogans state with a new array that is a copy of the old array with the new slogan immutably added to the end 
     setSlogans([...slogans, sloganInput]);
     // set the sloganInput form state to an empty string to reset the form
+    setSloganInput('');
   }
 
   return (
